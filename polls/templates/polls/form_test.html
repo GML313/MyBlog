@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="{% url 'polls:form_test' %}" method="post">
+        {% csrf_token %}
+        <p>用户类型: {{obj.ItemType }}<span>{{ errors.ItemType }}</span></p>
+        <p>编号: {{ obj.ItemCode }}<span>{{ errors.ItemCode }}</span></p>
+        <p>姓名: {{ obj.ItemName }}<span>{{ errors.ItemName }}</span></p>
+        <p>电话: {{ obj.ItemMobile }}<span>{{ errors.ItemMobile }}</span></p>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
