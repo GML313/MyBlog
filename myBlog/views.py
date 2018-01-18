@@ -11,6 +11,7 @@ def test(request):
     return render(request, 'templates/myBlog/test.html', {'current_time': datetime.now()})
 def home(request):
     posts = Article.objects.all()
+    print
     paginator = Paginator(posts,1)
     page = request.GET.get('page')
     try:
@@ -25,7 +26,7 @@ def detail(request,id):
         post = Article.objects.get(id=str(id))
     except Article.DoesNotExist:
         raise Http404
-    print "title = %s, category = %s, date_time = %s, content = %s" %(post.title, post.category, post.data_time, post.content)
+    #print "title = %s, category = %s, date_time = %s, content = %s" %(post.title, post.category, post.data_time, post.content)
     return render(request,'templates/myBlog/post.html',{'post':post})
 def archives(request) :
     try:

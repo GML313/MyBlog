@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'myBlog',
-    'myBlog.templatetags.custom_markdown',
+    #'myBlog.templatetags.custom_markdown',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
