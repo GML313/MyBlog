@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^admin/',include(admin.site.urls)),
     url(r'^(?P<id>\d+)/$',views.detail,name='detail'),
-    url(r'^tag(?P<tag>\w+)/$',views.search_tag,name='search_tag'),
+    url(r'^tag/(?P<tag>.+)/$',views.search_tag,name='search_tag'),
     url(r'^archives/$',views.archives,name='archives'),
     url(r'^search/$',views.blog_search,name='search'),
 ]

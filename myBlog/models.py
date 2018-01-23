@@ -7,7 +7,7 @@ class Article(models.Model):
     category = models.CharField(max_length=50,blank=True)
     data_time = models.DateTimeField(auto_now_add=True)
     content = models.TextField(blank=True,null=True)
-    def __str__(self):
+    def __unicode__(self): #方便在数据库中存放中文标题
         return self.title
     class Meta:
         ordering = ['-data_time']

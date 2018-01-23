@@ -37,7 +37,7 @@ def archives(request) :
                                             'error' : False})
 def search_tag(request,tag):
     try:
-        post_list = Article.objects.filter(category=tag)
+        post_list = Article.objects.filter(category__iexact=tag)
     except Article.DoesNotExist:
         raise Http404
     return render(request,'templates/myBlog/tag.html',{'post_list':post_list})
